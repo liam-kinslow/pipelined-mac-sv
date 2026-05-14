@@ -27,14 +27,14 @@ Each stage is separated by flip-flops clocked on the rising edge. The enable sig
 
 ## Simulation Results
 
-Simulated with A=3, B=4, en=1 for 6 cycles:
-Time=55  en=1 result=12
-Time=65  en=1 result=24
-Time=75  en=1 result=36
-Time=85  en=0 result=48
-Time=95  en=0 result=60   ← pipeline draining
-Time=105 en=0 result=72   ← pipeline draining
-Time=115 en=0 result=72   ← accumulator holds
+Simulated with A=3, B=4, en=1 for 6 cycles:  
+Time=55  en=1 result=12  
+Time=65  en=1 result=24  
+Time=75  en=1 result=36  
+Time=85  en=0 result=48  
+Time=95  en=0 result=60   ← pipeline draining  
+Time=105 en=0 result=72   ← pipeline draining  
+Time=115 en=0 result=72   ← accumulator holds  
 
 The 3-cycle latency before the first result and the 2-cycle pipeline drain on disable are both expected behaviours.
 
