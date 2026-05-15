@@ -23,7 +23,7 @@ Each stage is separated by flip-flops clocked on the rising edge. The enable sig
 - Input width: parameterised via `WIDTH` (default 8-bit)
 - Output width: `2*WIDTH+1` bits to prevent overflow
 - Signed arithmetic throughout
-- Active-low synchronous reset (`rst_n`)
+- Active-low asynchronous reset (`rst_n`)
 - Pipeline latency: 3 clock cycles
 
 ### SVA Assertions
