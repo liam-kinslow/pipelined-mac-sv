@@ -53,4 +53,20 @@ end
 // Output assignment 
 assign result = acc_reg;
 
+// Assertions to check correct behavior
+    localparam MAX_VAL = (2**(2*WIDTH-1))-1;                  // maximum positive value for signed output
+    localparam MIN_VAL = -(2**(2*WIDTH-1));                  // minimum negative value for signed output
+
+assert property (@(posedge clk) $fell(rst_n) |=> (result == 0))     // Reset should clear the accumulator
+    else $error("Reset did not clear the accumulator");
+
+assert property (@(posedge clk) $fell(en) |-> ##4 $stable(result))  // When enable falls, result holds the accumulated value after 2 cycles
+    else $error("Result did not hold the accumulated value when enable fell"); 
+
+assert property (@(posedge clk) disable iff (!rst_n) $rose(en) |-> ##2 !$stable(result))  // When enable rises, result should change after 3 cycles
+    else $error("Result did not change after enable rose");
+
+assert property (@(posedge clk) 1 |-> (result <= MAX_VAL && result >= MIN_VAL))  // Check for overflow in accumulation
+    else $error("Overflow detected in accumulation");
+
 endmodule
