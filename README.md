@@ -4,8 +4,8 @@ A parameterised 3-stage pipelined Multiply-Accumulate (MAC) unit implemented in 
 
 ## What is a MAC?
 
-A MAC unit computes:
-accumulator <= accumulator + (A × B)
+A MAC unit computes:  
+accumulator <= accumulator + (A × B)  
 MAC operations are the fundamental computation in neural network inference — every layer of a neural network is a matrix multiplication, which is a series of MAC operations. Hardware accelerators like Google's TPU are built around large arrays of MAC units running in parallel.
 
 ## Architecture
