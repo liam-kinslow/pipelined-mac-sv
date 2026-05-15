@@ -42,16 +42,16 @@ Simulated with A=3, B=4, en=1 for 6 cycles:
 
 ## Simulation Results
 
-Time=25   en=1  reset=1  result=0    ← pipeline filling
-Time=35   en=1  reset=1  result=0    ← pipeline filling
-Time=45   en=1  reset=1  result=0    ← pipeline filling
-Time=55   en=1  reset=1  result=12   ← first valid output
-Time=65   en=1  reset=1  result=24
-Time=75   en=1  reset=1  result=36
-Time=85   en=0  reset=1  result=48
-Time=95   en=0  reset=1  result=60   ← pipeline draining
-Time=105  en=0  reset=1  result=72   ← pipeline draining
-Time=115  en=0  reset=1  result=72   ← accumulator holds
+Time=25   en=1  reset=1  result=0    ← pipeline filling  
+Time=35   en=1  reset=1  result=0    ← pipeline filling  
+Time=45   en=1  reset=1  result=0    ← pipeline filling  
+Time=55   en=1  reset=1  result=12   ← first valid output  
+Time=65   en=1  reset=1  result=24  
+Time=75   en=1  reset=1  result=36  
+Time=85   en=0  reset=1  result=48  
+Time=95   en=0  reset=1  result=60   ← pipeline draining  
+Time=105  en=0  reset=1  result=72   ← pipeline draining  
+Time=115  en=0  reset=1  result=72   ← accumulator holds  
 
 The 3-cycle latency before the first result and the 2-cycle pipeline drain on disable are both expected behaviours.
 
